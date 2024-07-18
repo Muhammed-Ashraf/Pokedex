@@ -1,3 +1,4 @@
+/*TODO do like sky doves*/
 pluginManagement {
     repositories {
         google {
