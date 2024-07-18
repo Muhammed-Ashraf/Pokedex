@@ -1,22 +1,124 @@
+# Define version references for libraries and tools used in the project
 [versions]
-agp = "8.4.1"
-kotlin = "1.9.0"
-coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.2.1"
-espressoCore = "3.6.1"
+agp = "8.4.1"  #Android Gradle Plugin version
+kotlin = "2.0.0" # Kotlin version
+ksp = "2.0.0-1.0.21" # Kotlin Symbol Processing version
+kotlinxImmutable = "0.3.7" # Kotlinx Immutable Collections version
+androidxActivity = "1.9.0" # AndroidX Activity version
+androidxCore = "1.13.1" # AndroidX Core KTX version
+androidxLifecycle = "2.8.1" # AndroidX Lifecycle version
+androidxRoom = "2.6.1" # AndroidX Room version
+androidxArchCore = "2.2.0" # AndroidX Architecture Core Testing version
+androidXStartup = "1.1.1" # AndroidX Startup version
+androidxCompose = "1.7.0-beta02" # AndroidX Compose version
+androidxComposeMaterial3 = "1.3.0-beta01" # AndroidX Compose Material3 version
+androidxNavigation = "2.8.0-beta02" # AndroidX Navigation version
+androidxHiltNavigationCompose = "1.2.0" # AndroidX Hilt Navigation Compose version
+composeStableMarker = "1.0.4" # Compose Stable Marker version
+kotlinxSerializationJson = "1.6.3" # Kotlinx Serialization JSON version
+hilt = "2.51.1" # Dagger Hilt version
+retrofit = "2.11.0" # Retrofit version
+okHttp = "4.12.0" # OkHttp version
+sandwich = "2.0.8" # Sandwich version
+landscapist = "2.3.3" # Landscapist version
+coroutines = "1.8.1" # Kotlin Coroutines version
+profileInstaller = "1.3.1" # Profile Installer version
+macroBenchmark = "1.2.4" # Macro Benchmark version
+uiAutomator = "2.3.0" # UI Automator version
+truth = "1.4.2" # Truth version
+junit = "4.13.2" # JUnit version
+turbine = "1.1.0" # Turbine version
+robolectric = "4.12.1" # Robolectric version
+androidxTest = "1.5.0" # AndroidX Test Core version
+androidxTestJunit = "1.1.5" # AndroidX JUnit version
+androidTestRunner = "1.3.0-beta01" # Android Test Runner version
+espresso = "3.5.1" # Espresso version
+mockito = "5.11.0" # Mockito version
+mockito-kotlin = "5.2.1" # Mockito Kotlin version
+spotless = "6.25.0" # Spotless version
+baselineprofile = "1.2.4"
 appcompat = "1.7.0"
-material = "1.12.0"
+material = "1.12.0" # Baseline Profile version
 
+# Define dependencies using named references for easier maintenance and version updates
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "androidxRoom" } # Room runtime dependency
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "androidxRoom" } # Room KTX dependency
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "androidxRoom" } # Room compiler dependency
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "androidxArchCore" } # Architecture Core Testing dependency
+androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "androidXStartup" } # Startup runtime dependency
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" } # Activity Compose dependency
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" } # Core KTX dependency
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" } # Navigation Compose dependency
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "androidxCompose" } # Compose Foundation dependency
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "androidxCompose" } # Compose Foundation Layout dependency
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidxComposeMaterial3" } # Compose Material3 dependency
+androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime", version.ref = "androidxCompose" } # Compose Runtime dependency
+androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "androidxCompose" } # Compose Animation dependency
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "androidxCompose" } # Compose UI dependency
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "androidxCompose" } # Compose UI Tooling dependency
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "androidxCompose" } # Compose UI Tooling Preview dependency
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" } # Hilt Navigation Compose dependency
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" } # Lifecycle ViewModel Compose dependency
+androidx-test-core = { module = "androidx.test:core", version.ref = "androidxTest" } # AndroidX Test Core dependency
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTestJunit" } # AndroidX JUnit dependency
+androidx-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" } # Espresso Core dependency
+compose-stable-marker = { group = "com.github.skydoves", name = "compose-stable-marker", version.ref = "composeStableMarker" } # Compose Stable Marker dependency
+landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide", version.ref = "landscapist" } # Landscapist Glide dependency
+landscapist-animation = { group = "com.github.skydoves", name = "landscapist-animation", version.ref = "landscapist" } # Landscapist Animation dependency
+landscapist-placeholder = { group = "com.github.skydoves", name = "landscapist-placeholder", version.ref = "landscapist" } # Landscapist Placeholder dependency
+landscapist-palette = { group = "com.github.skydoves", name = "landscapist-palette", version.ref = "landscapist" } # Landscapist Palette dependency
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" } # Dagger Hilt Android dependency
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" } # Dagger Hilt Compiler dependency
+hilt-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" } # Dagger Hilt Android Testing dependency
+sandwich = { module = "com.github.skydoves:sandwich-retrofit", version.ref = "sandwich" } # Sandwich Retrofit dependency
+retrofit-bom = { module = "com.squareup.retrofit2:retrofit-bom", version.ref = "retrofit" } # Retrofit BOM dependency
+retrofit = { module = "com.squareup.retrofit2:retrofit" } # Retrofit dependency
+retrofit-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization" } # Retrofit Kotlinx Serialization Converter dependency
+okhttp-bom = { module = "com.squareup.okhttp3:okhttp-bom", version.ref = "okHttp" } # OkHttp BOM dependency
+okhttp-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor" } # OkHttp Logging Interceptor dependency
+okhttp-mockwebserver = { module = "com.squareup.okhttp3:mockwebserver" } # OkHttp MockWebServer dependency
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" } # Kotlin Coroutines Android dependency
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" } # Kotlin Coroutines Test dependency
+kotlinx-immutable-collection = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinxImmutable" } # Kotlinx Immutable Collections dependency
+
+# Define dependencies for unit testing
+# unit test
+junit = { module = "junit:junit", version.ref = "junit" } # JUnit for unit tests
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" } # Mockito Core for unit tests
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" } # Mockito Kotlin for unit tests
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" } # Turbine for unit tests
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" } # Robolectric for unit tests
+truth = { module = "com.google.truth:truth", version.ref = "truth" } # Truth for unit tests
+android-test-runner = { module = "com.android.support.test:runner", version.ref = "androidTestRunner" } # Android Test Runner for unit tests
+profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "profileInstaller" } # Profile Installer for unit tests
+macrobenchmark = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "macroBenchmark" } # Macro Benchmark for unit tests
+uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "uiAutomator" } # UI Automator for unit tests
+
+# Dependencies of the included build-logic
+
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" } # Android Gradle Plugin dependency for build-logic
+compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" } # Compose Compiler Gradle Plugin dependency for build-logic
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" } # Kotlin Gradle Plugin dependency for build-logic
+spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" } # Spotless Gradle Plugin dependency for build-logic
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" } # Kotlinx Serialization JSON dependency for build-logic
 
+# Define plugins used in the project
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-application = { id = "com.android.application", version.ref = "agp" } # Android Application plugin
+android-library = { id = "com.android.library", version.ref = "agp" } # Android Library plugin
+android-test = { id = "com.android.test", version.ref = "agp" } # Android Test plugin
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" } # Kotlin Android plugin
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" } # Kotlinx Serialization plugin
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" } # Kotlin Symbol Processing (KSP) plugin
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" } # Kotlin Parcelize plugin
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" } # Spotless plugin
+hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" } # Dagger Hilt Android plugin
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" } # Baseline Profile plugin
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" } # Compose Compiler plugin
 
+# Define bundles grouping related dependencies
+[bundles]
+retrofitBundle = ["retrofit", "retrofit-kotlinx-serialization", "okhttp-logging-interceptor"] # Retrofit Bundle including Retrofit, Retrofit Kotlinx Serialization Converter, OkHttp Logging Interceptor
