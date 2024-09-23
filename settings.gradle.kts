@@ -1,6 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":baselineprofile")
+//TODO uncomment
+//include(":baselineprofile")
 
 /*
 The enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS") line is used in a Gradle build script
