@@ -5,7 +5,7 @@ import java.util.Properties
 plugins {
 //    TODO like skydoves
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -90,14 +90,10 @@ android {
         jvmTarget = "1.8" //TODO remove this line after adding build logic
     }
     buildFeatures {
-        compose = true //TODO remove this line after adding build logic
         buildConfig = true // Enable generation of BuildConfig class
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1" //TODO remove this line after adding build logic
-    }
 
-    //TODO uncomment
+//    TODO uncomment
 //    hilt {
 //        /*
 //        * This setting enables Hilt's aggregating task, which allows for more efficient processing of
@@ -125,22 +121,21 @@ android {
 }
 
 dependencies {
-//TODO try replacing individual compose dependencies with bom
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+//    implementation(libs.androidx.core.ktx)
+//    implementation(libs.androidx.lifecycle.runtime.ktx)
+//    implementation(libs.androidx.activity.compose)
+//    implementation(platform(libs.androidx.compose.bom))
+//    implementation(libs.androidx.ui)
+//    implementation(libs.androidx.ui.graphics)
+//    implementation(libs.androidx.ui.tooling.preview)
+//    implementation(libs.androidx.material3)
+//    testImplementation(libs.junit)
+//    androidTestImplementation(libs.androidx.junit)
+//    androidTestImplementation(libs.androidx.espresso.core)
+//    androidTestImplementation(platform(libs.androidx.compose.bom))
+//    androidTestImplementation(libs.androidx.ui.test.junit4)
+//    debugImplementation(libs.androidx.ui.tooling)
+//    debugImplementation(libs.androidx.ui.test.manifest)
 
 
     // features
@@ -154,10 +149,18 @@ dependencies {
 //    implementation(projects.core.designsystem)
 //    implementation(projects.core.navigation)
 
-    // compose
+    //TODO try replacing individual compose dependencies with bom compose
+
+    // Provides support for integrating Jetpack Compose with the Android activity lifecycle
     implementation(libs.androidx.activity.compose)
+
+    // Core library for building UIs with Jetpack Compose, including layout primitives and theming
     implementation(libs.androidx.compose.ui)
+
+    // Essential for managing state and reactive programming in Jetpack Compose
     implementation(libs.androidx.compose.runtime)
+
+    // Offers foundational components and utilities for creating rich UIs in Compose
     implementation(libs.androidx.compose.foundation)
 
     // di
@@ -165,26 +168,41 @@ dependencies {
     //TODO uncomment
  //   ksp(libs.hilt.compiler)
     androidTestImplementation(libs.hilt.testing)
-    //TODO uncomment
-//    kspAndroidTest(libs.hilt.compiler)
+ //   TODO uncomment
+  //  kspAndroidTest(libs.hilt.compiler)
 
     // baseline profile
-//    //TODO uncomment
-//    implementation(libs.profileinstaller)
+    implementation(libs.profileinstaller)
+    //TODO uncomment
 //    baselineProfile(project(":baselineprofile"))
 
     // unit test
+
+    // JUnit is a widely used testing framework for Java applications, providing annotations and assertions for unit tests
     testImplementation(libs.junit)
-  //TODO uncomment
-   // testImplementation(libs.turbine)
+
+    // Turbine is a testing library for Kotlin coroutines that simplifies testing flow emissions
+    testImplementation(libs.turbine)
+
+    // Core testing utilities for Android, aiding in writing unit tests for Android components
     testImplementation(libs.androidx.test.core)
-    //TODO uncomment
-//    testImplementation(libs.mockito.core)
-//    testImplementation(libs.mockito.kotlin)
+
+    // Mockito core for creating mock objects and defining their behavior in unit tests
+    testImplementation(libs.mockito.core)
+
+    // Mockito extension for Kotlin, providing a more idiomatic way to create and use mocks
+    testImplementation(libs.mockito.kotlin)
+
+    // Utilities for testing Kotlin coroutines, enabling control over coroutine execution and testing suspending functions
     testImplementation(libs.kotlinx.coroutines.test)
-    //TODO uncomment
-//    androidTestImplementation(libs.truth)
+
+    // Truth assertion library for Java, offering a fluent API for writing expressive assertions in tests
+    androidTestImplementation(libs.truth)
+
+    // AndroidX JUnit support, providing additional functionalities for writing instrumented tests on Android
     androidTestImplementation(libs.androidx.junit)
+
+    // Espresso framework for automated UI testing in Android, enabling interaction with UI components and assertions
     androidTestImplementation(libs.androidx.espresso)
 //  androidTestImplementation(libs.android.test.runner)
 }
