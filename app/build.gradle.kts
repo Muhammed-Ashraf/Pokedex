@@ -1,4 +1,7 @@
 import com.example.pokedex.Configuration
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
 //    TODO like skydoves
     alias(libs.plugins.android.application)
@@ -29,15 +32,60 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" //TODO like skydoves
     }
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+    signingConfigs {
+        val properties = Properties()
+        val localPropertyFile = project.rootProject.file("local.properties")
+        if (localPropertyFile.canRead()) {
+            properties.load(FileInputStream("$rootDir/local.properties"))
+        }
+        create("release") {
+            storeFile = file(properties["RELEASE_KEYSTORE_PATH"] ?: "../keystores/pokedex.jks")
+            keyAlias = properties["RELEASE_KEY_ALIAS"].toString()
+            keyPassword = properties["RELEASE_KEY_PASSWORD"].toString()
+            storePassword = properties["RELEASE_KEYSTORE_PASSWORD"].toString()
         }
     }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles("proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("release")
+        }
+
+        /*
+* The kotlinOptions block in your build.gradle file is used to configure
+* the behavior of the Kotlin compiler when compiling your Android project.
+* Specifically, the freeCompilerArgs property allows you to pass additional compiler
+* arguments to control how Kotlin code is compiled.
+* */
+        kotlinOptions {
+            freeCompilerArgs += listOf(
+                "-Xno-param-assertions",    // Disables parameter nullability assertions at runtime for better performance.
+                "-Xno-call-assertions",     //  Disables call-site nullability checks for non-nullable return types.
+                "-Xno-receiver-assertions"  //  Disables receiver nullability checks for extension functions or properties.
+            )
+        }
+
+        /*
+        * The packaging block in your build.gradle file configures how the build system
+        * handles resources during the packaging phase (when the APK or AAB is being built).
+        *  In this specific case, the excludes list is used to exclude certain
+        * files or directories from being included in the final APK/AAB.
+        * */
+        packaging {
+            resources {
+                excludes += listOf(
+                    "DebugProbesKt.bin",               // Exclude Kotlin Coroutine debug file
+                    "kotlin-tooling-metadata.json",    // Exclude Kotlin build metadata file
+                    "kotlin/**",                       // Exclude all Kotlin-related resource files
+                    "META-INF/*.version"               // Exclude version info in META-INF directory
+                )
+            }
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
