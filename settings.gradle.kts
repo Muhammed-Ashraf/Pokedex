@@ -22,7 +22,7 @@ type-safe syntax, which is generally more robust and less error-prone. For examp
 */
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
-    // includeBuild("build-logic") //TODo uncomment after adding build logic folder
+    includeBuild("build-logic")
     repositories {
 
 

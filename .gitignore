@@ -91,3 +91,5 @@ local.properties
 /buildSrc/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at
 /buildSrc/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i
 /buildSrc/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len
+/.kotlin/errors/errors-1727169730986.log
+/buildSrc/build/source-roots/buildSrc/source-roots.txt
