@@ -151,7 +151,7 @@ Avoid Conflicts: It helps prevent potential conflicts or issues that might arise
 rootProject.name = "pokedex-compose"
 include(":app")
 //TODO uncomment after adding modules & features
-//include(":core:model")
+include(":core:model")
 //include(":core:network")
 //include(":core:viewmodel")
 //include(":core:database")
