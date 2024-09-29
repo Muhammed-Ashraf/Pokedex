@@ -2,6 +2,8 @@ plugins {
     `kotlin-dsl`          // Supports Kotlin DSL for Gradle scripts
 }
 
+group = "com.example.pokedex.compose.buildlogic"
+
 dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.compose.compiler.gradlePlugin)

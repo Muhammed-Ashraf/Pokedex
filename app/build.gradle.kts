@@ -3,7 +3,10 @@ import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
-//    TODO like skydoves
+    id("example.pokedex.android.application")
+    id("example.pokedex.android.application.compose")
+    id("example.pokedex.android.hilt")
+    id("example.pokedex.spotless")
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 }
@@ -29,7 +32,7 @@ android {
         targetSdk = 34
         versionCode = Configuration.versionCode
         versionName = Configuration.versionName
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" //TODO like skydoves
+        testInstrumentationRunner = "com.example.pokedex.compose.AndroidJUnitRunner"
     }
 
     signingConfigs {
@@ -86,23 +89,20 @@ android {
         }
     }
 
-    kotlinOptions {
-        jvmTarget = "1.8" //TODO remove this line after adding build logic
-    }
+
     buildFeatures {
         buildConfig = true // Enable generation of BuildConfig class
     }
 
-//    TODO uncomment
-//    hilt {
-//        /*
-//        * This setting enables Hilt's aggregating task, which allows for more efficient processing of
-//        * Hilt's dependency injection code generation.
-//        * When set to true, it instructs the Hilt compiler to aggregate dependencies
-//        * across multiple modules or components of your application.
-//        */
-//        enableAggregatingTask = true
-//    }
+    hilt {
+        /*
+        * This setting enables Hilt's aggregating task, which allows for more efficient processing of
+        * Hilt's dependency injection code generation.
+        * When set to true, it instructs the Hilt compiler to aggregate dependencies
+        * across multiple modules or components of your application.
+        */
+        enableAggregatingTask = true
+    }
 
     kotlin {
 //    The purpose here is to set up additional source directories for each source set(e.g., main, test, etc.)
@@ -165,11 +165,9 @@ dependencies {
 
     // di
     implementation(libs.hilt.android)
-    //TODO uncomment
- //   ksp(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     androidTestImplementation(libs.hilt.testing)
- //   TODO uncomment
-  //  kspAndroidTest(libs.hilt.compiler)
+    kspAndroidTest(libs.hilt.compiler)
 
     // baseline profile
     implementation(libs.profileinstaller)

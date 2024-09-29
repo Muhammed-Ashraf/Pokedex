@@ -1,4 +1,4 @@
-package com.example
+
 
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import com.example.pokedex.configureAndroidCompose

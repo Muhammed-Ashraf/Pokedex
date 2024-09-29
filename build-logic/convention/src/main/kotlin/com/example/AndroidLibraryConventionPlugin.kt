@@ -1,4 +1,4 @@
-package com.example// Import necessary classes for defining a custom Gradle plugin and managing Android library configurations
+
 import com.android.build.gradle.LibraryExtension // Import for Android library configuration
 import com.example.pokedex.configureKotlinAndroid
 import org.gradle.api.Plugin // Import for defining a Gradle plugin

@@ -1,4 +1,4 @@
-package com.example// Import necessary classes for Android and Kotlin configurations
+
 
 // BaseAppModuleExtension is part of the Android Gradle Plugin, 
 // allowing access to Android-specific configurations like compileSdk, defaultConfig, etc.

@@ -1,4 +1,4 @@
-package com.example// Import necessary classes for configuring the Spotless plugin in a Gradle project.
+
 import com.diffplug.gradle.spotless.SpotlessExtension // Import for Spotless configuration extension
 import org.gradle.api.Plugin // Import for defining a Gradle plugin
 import org.gradle.api.Project // Import for interacting with the Gradle project

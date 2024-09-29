@@ -1,4 +1,4 @@
-package com.example// Import necessary classes for defining a custom Gradle plugin and managing dependencies
+
 
 // Plugin and Project classes from the Gradle API, used to define and apply custom Gradle plugins to projects
 import org.gradle.api.Plugin

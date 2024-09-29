@@ -1,4 +1,4 @@
-package com.example// Import the necessary classes for Android and Kotlin configurations
+
 
 // LibraryExtension is part of the Android Gradle Plugin, used for configuring Android library modules
 import com.android.build.gradle.LibraryExtension
