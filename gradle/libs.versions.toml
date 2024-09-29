@@ -127,3 +127,8 @@ hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 baselineprofile = { id = "androidx.baselineprofile", version.ref = "baselineprofile" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
+
+[bundles]
+retrofitBundle = ["retrofit", "retrofit-kotlinx-serialization", "okhttp-logging-interceptor"]
+
+
