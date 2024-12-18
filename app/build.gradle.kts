@@ -145,8 +145,8 @@ dependencies {
 
     // cores
     //TODO uncomment
-//    implementation(projects.core.model)
-//    implementation(projects.core.designsystem)
+    implementation(projects.core.model)
+    implementation(projects.core.designsystem)
 //    implementation(projects.core.navigation)
 
     //TODO try replacing individual compose dependencies with bom compose
