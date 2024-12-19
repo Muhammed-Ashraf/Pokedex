@@ -158,7 +158,7 @@ include(":core:database")
 include(":core:data")
 include(":core:viewmodel")
 include(":core:designsystem")
-//include(":core:navigation")
+include(":core:navigation")
 //include(":core:preview")
 //
 //include(":feature:home")

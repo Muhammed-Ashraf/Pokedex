@@ -1,5 +1,3 @@
-
-
 // LibraryExtension is part of the Android Gradle Plugin, used for configuring Android library modules
 import com.android.build.gradle.LibraryExtension
 import com.example.pokedex.configureAndroidCompose
@@ -41,18 +39,18 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             // Configure the project's dependencies block to include shared modules required by the feature module
             dependencies {
                 // Add the core design system module as a dependency, which likely contains shared UI components
-                //TODO uncomment
-                // add("implementation", project(":core:designsystem"))
+
+                add("implementation", project(":core:designsystem"))
 
                 // Add the core navigation module, used for navigation logic and routing in the app
-                //TODO uncomment
-                //  add("implementation", project(":core:navigation"))
+
+                add("implementation", project(":core:navigation"))
 
                 // Add the core ViewModel module, which contains shared ViewModel classes for managing UI-related data
                 //   add("implementation", project(":core:viewmodel"))
 
                 // Add the core data module, which manages data access, handling, and persistence
-                   add("implementation", project(":core:data"))
+                add("implementation", project(":core:data"))
 
                 // Add the core preview module as a 'compileOnly' dependency, likely used for UI previews and not required at runtime
                 //TODO uncomment

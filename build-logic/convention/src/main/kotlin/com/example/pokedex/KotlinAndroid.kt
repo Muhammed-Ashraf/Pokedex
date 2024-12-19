@@ -26,7 +26,7 @@ internal fun Project.configureKotlinAndroid(
 
         // Sets the minimum Android SDK version supported by the app to API level 21 (Android 5.0 Lollipop).
         defaultConfig {
-            minSdk = 21
+            minSdk = 28
         }
 
         // Configures the Java source and target compatibility to Java 17.

@@ -21,15 +21,12 @@ android {
     * keeping code organization and build tasks modular and separate.
     * */
     namespace = "com.example.pokedex"
-    compileSdk = 34
 
     defaultConfig {
         /*
         * Cannot be changed once your app is published without creating a new app in the Play Store.
         * */
         applicationId = "com.example.pokedex"
-        minSdk = 28
-        targetSdk = 34
         versionCode = Configuration.versionCode
         versionName = Configuration.versionName
         testInstrumentationRunner = "com.example.pokedex.compose.AndroidJUnitRunner"
@@ -118,6 +115,11 @@ android {
         }
     }
 
+    testOptions.unitTests {
+        isIncludeAndroidResources = true
+        isReturnDefaultValues = true
+    }
+
 }
 
 dependencies {
@@ -144,10 +146,9 @@ dependencies {
 //    implementation(projects.feature.details)
 
     // cores
-    //TODO uncomment
     implementation(projects.core.model)
     implementation(projects.core.designsystem)
-//    implementation(projects.core.navigation)
+    implementation(projects.core.navigation)
 
     //TODO try replacing individual compose dependencies with bom compose
 
