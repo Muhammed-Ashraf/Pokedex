@@ -150,7 +150,7 @@ Avoid Conflicts: It helps prevent potential conflicts or issues that might arise
 }
 rootProject.name = "pokedex-compose"
 include(":app")
-//TODO uncomment after adding modules & features
+
 include(":core:model")
 include(":core:test")
 include(":core:network")
@@ -159,7 +159,7 @@ include(":core:data")
 include(":core:viewmodel")
 include(":core:designsystem")
 include(":core:navigation")
-//include(":core:preview")
+include(":core:preview")
 //
 //include(":feature:home")
 //include(":feature:details")

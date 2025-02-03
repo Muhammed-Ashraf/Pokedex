@@ -53,8 +53,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", project(":core:data"))
 
                 // Add the core preview module as a 'compileOnly' dependency, likely used for UI previews and not required at runtime
-                //TODO uncomment
-                //  add("compileOnly", project(":core:preview"))
+                  add("compileOnly", project(":core:preview"))
             }
 
             // Retrieve and configure the LibraryExtension, which contains Android-specific settings for library modules
