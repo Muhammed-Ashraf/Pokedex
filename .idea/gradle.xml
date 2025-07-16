@@ -41,6 +41,8 @@
             <option value="$PROJECT_DIR$/core/preview" />
             <option value="$PROJECT_DIR$/core/test" />
             <option value="$PROJECT_DIR$/core/viewmodel" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/home" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

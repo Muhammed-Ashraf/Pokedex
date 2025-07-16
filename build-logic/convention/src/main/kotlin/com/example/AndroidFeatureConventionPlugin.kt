@@ -46,8 +46,8 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
                 add("implementation", project(":core:navigation"))
 
-                // Add the core ViewModel module, which contains shared ViewModel classes for managing UI-related data
-                //   add("implementation", project(":core:viewmodel"))
+                 //Add the core ViewModel module, which contains shared ViewModel classes for managing UI-related data
+                   add("implementation", project(":core:viewmodel"))
 
                 // Add the core data module, which manages data access, handling, and persistence
                 add("implementation", project(":core:data"))
