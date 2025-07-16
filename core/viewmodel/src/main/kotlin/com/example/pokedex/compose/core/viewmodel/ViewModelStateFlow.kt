@@ -1,3 +1,4 @@
+package com.example.pokedex.compose.core.viewmodel
 /*
  * Designed and developed by 2024 skydoves (Jaewoong Eum)
  *
@@ -13,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

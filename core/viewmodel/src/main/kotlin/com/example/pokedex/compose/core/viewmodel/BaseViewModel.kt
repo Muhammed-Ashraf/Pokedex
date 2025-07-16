@@ -1,5 +1,7 @@
 package com.example.pokedex.compose.core.viewmodel
 
+import androidx.lifecycle.ViewModel
+
 // BaseViewModel serves as an abstract class for ViewModels, providing common functionality
 // for state management. By inheriting from Android's ViewModel class, it helps maintain
 // UI-related data in a lifecycle-conscious way, preventing data loss during configuration
